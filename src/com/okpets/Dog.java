@@ -23,8 +23,10 @@ public class Dog {
 
     // create an uninitialized Dog instance
     public Dog() {
-        sex = SEX_NONE;
-        interestedIn = SEX_NONE;
+        this.name = NO_NAME;
+        this.breed = NO_BREED;
+        this.sex = SEX_NONE;
+        this.interestedIn = SEX_NONE;
     }
 
     // create a Dog instance with given name, breed, sex, and interestedIn values
@@ -83,18 +85,15 @@ public class Dog {
         // If this instance is uninitialized (interestedIn is equal to SEX_NONE), return false.
         // If passed dog instance is uninitialized (sex is equal to SEX_NONE), also return false.
         // return true if interestedIn matches sex of passed dog instance or if interestedIn is SEX_BOTH.
-        if (this.interestedIn == dog.getSex()) {
+        if ((this.interestedIn == SEX_NONE) || (dog.getSex() == SEX_NONE)) {
             return false;
         }
-        else if (dog.getSex() == SEX_NONE) {
-            return false;
-        }
-        return (this.interestedIn == dog.getSex() || this.interestedIn == SEX_BOTH);
+        return ((this.interestedIn == dog.getSex()) || (this.interestedIn == SEX_BOTH));
     }
 
     public String toString() {
-        String userSex = "";
-        String userInt = "";
+        String userSex = "(unknown sex)";
+        String userInt = "(unknown interest)";
         if (sex == SEX_MALE) {
             userSex = "male";
         }
@@ -111,7 +110,7 @@ public class Dog {
         else if (interestedIn == SEX_BOTH) {
             userInt = "interested in both males and females";
         }
-        return this.name + ", " + this.breed + ", " + userSex + ", " + userInt;
+        return name + ", " + breed + ", " + userSex + ", " + userInt;
     }
 
 }

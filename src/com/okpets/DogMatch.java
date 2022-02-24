@@ -14,7 +14,7 @@ public class DogMatch {
     }
 
     public boolean isCompatible(Dog myDog) {
-        return myDog.isInterestedIn(this.dog) && this.dog.isInterestedIn(dog);
+        return myDog.isInterestedIn(this.dog) && this.dog.isInterestedIn(myDog);
     }
 
     public boolean isMatchConfirmed() {

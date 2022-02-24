@@ -45,20 +45,19 @@ public class MenuManager {
     }
 
     public void commandUpdateDogInfo() {
+        String name;
+        String breed;
+        int sex;
+        int interest;
         System.out.println("Updating my dog information.");
         System.out.println("Enter dog name: ");
-        String name = scnr.next();
-        myDog.setName(name);
-        scnr.nextLine();
+        name = scnr.nextLine();
         System.out.println("Enter dog breed: ");
-        String breed = scnr.nextLine();
-        myDog.setBreed(breed);
+        breed = scnr.nextLine();
         System.out.println("Enter dog sex (0 - Male, 1 - Female)");
-        int sex = scnr.nextInt();
-        myDog.setSex(sex);
+        sex = scnr.nextInt();
         System.out.println("Is your dog interested in (0 - Male, 1 - Female, 2 - both)?");
-        int interest = scnr.nextInt();
-        myDog.setInterestedIn(interest);
+        interest = scnr.nextInt();
 
         System.out.println("Updated my dog information:");
         myDog = new Dog(name, breed, sex, interest);
@@ -140,6 +139,7 @@ public class MenuManager {
         manager.getDatabase().addMatch(new Dog("Scout", "Golden Retriever", 0, 2));
         manager.getDatabase().addMatch(new Dog("Bella", "German Shepherd", 1, 2));
         manager.getDatabase().addMatch(new Dog("Daisy", "Dachshund", 1, 1));
+        System.out.println(new Dog());
         manager.runMenu();
     }
 }

@@ -24,11 +24,11 @@ public class MatchesDatabase {
     }
 
     public void showAllMatches() {
-        for (int i = 0; i< allMatches.size(); i++) {
+        for (int i = 0; i < allMatches.size(); i++) {
             System.out.println(allMatches.get(i).getDog());
         }
-            if (allMatches.isEmpty()) {
-                System.out.println("There are no matches in the database!");
+        if (allMatches.size() == 0) {
+            System.out.println("There are no matches in the database!");
         }
         System.out.println();
     }
